@@ -15,6 +15,7 @@
 #endif
 #define LENGTH(X)               (sizeof(X) / sizeof (X[0]))
 #define CMDLENGTH		50
+#define DELIMLEN    5
 #define MIN( a, b ) ( ( a < b) ? a : b )
 #define STATUSLENGTH (LENGTH(blocks) * CMDLENGTH + 1)
 
@@ -64,7 +65,7 @@ void getcmd(const Block *block, char *output)
 	if (!cmdf)
 		return;
 	int i = strlen(block->icon);
-	fgets(output+i, CMDLENGTH-i-delimLen, cmdf);
+	fgets(output+i, CMDLENGTH-i-DELIMLEN, cmdf);
 	i = strlen(output);
 	if (i == 0) {
 		//return if block and command output are both empty
@@ -74,7 +75,7 @@ void getcmd(const Block *block, char *output)
 	if (delim[0] != '\0') {
 		//only chop off newline if one is present at the end
 		i = output[i-1] == '\n' ? i-1 : i;
-    if (block->usedelim) strncpy(output+i, delim, delimLen);
+    if (block->usedelim) strncpy(output+i, delim, DELIMLEN);
     else
       strncpy(output+i, " ", 2);
 	}
@@ -196,7 +197,7 @@ int main(int argc, char** argv)
 {
 	for (int i = 0; i < argc; i++) {//Handle command line arguments
 		if (!strcmp("-d",argv[i]))
-			strncpy(delim, argv[++i], delimLen);
+			strcpy(delim, argv[++i]);
 		else if (!strcmp("-p",argv[i]))
 			writestatus = pstdout;
 	}
@@ -204,8 +205,6 @@ int main(int argc, char** argv)
 	if (!setupX())
 		return 1;
 #endif
-	delimLen = MIN(delimLen, strlen(delim));
-	delim[delimLen++] = '\0';
 	signal(SIGTERM, termhandler);
 	signal(SIGINT, termhandler);
 	statusloop();
