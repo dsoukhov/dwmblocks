@@ -2,6 +2,7 @@
 //to access the signals use  pkill -RTMIN+<n> dwmblocks where n is defined below
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/ /*use delim*/
+	//{"VOL: ","pamixer --get-volume-human|tee >(notify-send -t 300 $(cat))", 0, 1 ,1},
 	{"VOL: ","pamixer --get-volume-human", 0, 1 ,1},
 	{"CPU: ","/usr/lib/i3blocks/cpu_usage/cpu_usage", 1, 0 ,0},
   {"", "cat /proc/cpuinfo|grep -i mhz|awk 'BEGIN {max = 0} {if ($4>max) max=$4} END {printf \"%dMhz\", max}'", 1, 0, 0},
