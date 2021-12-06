@@ -13,8 +13,8 @@ static const Block blocks[] = {
 	{"ROOT: ","BLOCK_INSTANCE=/ /usr/lib/i3blocks/disk/disk", 60, 0, 0},
 	{"HOME: ","BLOCK_INSTANCE=/home /usr/lib/i3blocks/disk/disk", 60, 0, 1},
 	{"MEM: ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 1, 0, 1},
-	{"BAT0: ", "BAT_NUMBER=0 /usr/lib/i3blocks/battery/battery", 5, 0, 0},
-	{"BAT1: ", "BAT_NUMBER=1 /usr/lib/i3blocks/battery/battery", 5, 0, 0},
+	{"BAT0: ", "BAT_NUMBER=0 HIB_LVL=2 ~/scripts/battery", 2, 0, 0},
+	{"BAT1: ", "BAT_NUMBER=1 HIB_LVL=2 ~/scripts/battery", 5, 0, 0},
 	{"" , "/home/daniel/scripts/wattage", 1, 0, 1},
 	{"", "date '+%a %d %b %Y %I:%M %p'", 10, 0, 1}
 };
