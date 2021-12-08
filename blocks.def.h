@@ -3,7 +3,7 @@
 static const Block blocks[] = {
   /*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/ /*use delim*/
   {"VOL: ","pamixer --get-volume-human", 0, 1 ,0},
-  {"MIC: ","pamixer --source \"alsa_input.pci-0000_00_1f.3.analog-stereo\" --get-volume-human", 0, 2, 1},
+  {"MIC: ","~/scripts/mic vol", 0, 2, 1},
   {"CPU: ","/usr/lib/i3blocks/cpu_usage", 1, 0 ,0},
   {"", "cat /proc/cpuinfo|grep -i mhz|awk 'BEGIN {max = 0} {if ($4>max) max=$4} END {printf \"%dMhz\", max}'", 1, 0, 0},
   {"","SENSOR_CHIP=coretemp-isa-0000 /usr/lib/i3blocks/temperature", 1, 0 ,1},
