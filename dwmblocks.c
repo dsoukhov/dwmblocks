@@ -67,12 +67,12 @@ void getcmd(const Block *block, char *output)
   int i = strlen(block->icon);
   fgets(output+i, CMDLENGTH-i-DELIMLEN, cmdf);
   i = strlen(output);
-  if (i == 0) {
+  if (i == 0 && !block->usedelim) {
     //return if block and command output are both empty
     pclose(cmdf);
     return;
   }
-  if (delim[0] != '\0') {
+  if (delim[0] != '\0' || delim[0] == '\0' && block->usedelim) {
     //only chop off newline if one is present at the end
     i = output[i-1] == '\n' ? i-1 : i;
     if (block->usedelim) strncpy(output+i, delim, DELIMLEN);
