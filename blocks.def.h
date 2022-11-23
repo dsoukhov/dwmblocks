@@ -5,7 +5,7 @@ static const Block blocks[] = {
   {"VOL: ","pamixer --get-volume-human", 0, 1 ,0},
   {"MIC: ","~/scripts/mic vol", 0, 2, 1},
   {"CPU: ","/usr/lib/i3blocks/cpu_usage", 1, 0 ,0},
-  {"", "cat /proc/cpuinfo|grep -i mhz|awk 'BEGIN {max = 0} {if ($4>max) max=$4} END {printf \"%dMhz\", max}'", 1, 0, 0},
+  {"", "grep -i mhz /proc/cpuinfo|awk 'BEGIN {min = \"MAX\"} {if ($4<min) min=$4} END {printf \"%dMhz\", min}'", 1, 0, 0},
   {"","SENSOR_CHIP=coretemp-isa-0000 /usr/lib/i3blocks/temperature", 1, 0 ,1},
   {"GPU: ","SENSOR_CHIP=radeon-pci-0100 /usr/lib/i3blocks/temperature", 1, 0 ,1},
   //{"","/usr/lib/i3blocks/iface/iface", 10, 0, 0},
