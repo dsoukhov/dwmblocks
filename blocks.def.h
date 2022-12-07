@@ -11,7 +11,7 @@ static const Block blocks[] = {
   //{"","/usr/lib/i3blocks/iface/iface", 10, 0, 0},
   {"","/usr/lib/i3blocks/bandwidth", 1, 0, 1},
   {"ROOT: ","BLOCK_INSTANCE=/ /usr/lib/i3blocks/disk", 10, 0, 0},
-  {"HDD: ","BLOCK_INSTANCE=/home/daniel/mnt/hdd /usr/lib/i3blocks/disk", 5, 0, 0},
+  {"HDD: ","BLOCK_INSTANCE=/mnt/hdd /usr/lib/i3blocks/disk", 5, 0, 0},
   {"HOME: ","BLOCK_INSTANCE=/home /usr/lib/i3blocks/disk", 10, 0, 1},
   {"MEM: ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 1, 0, 1},
   {"", "date '+%a %d %b %Y %I:%M %p'", 1, 0, 1}
