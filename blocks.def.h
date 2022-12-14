@@ -9,7 +9,7 @@ static const Block blocks[] = {
   {"","SENSOR_CHIP=coretemp-isa-0000 /usr/lib/i3blocks/temperature", 1, 0 ,1},
   {"GPU: ","SENSOR_CHIP=radeon-pci-0100 /usr/lib/i3blocks/temperature", 1, 0 ,1},
   //{"","/usr/lib/i3blocks/iface/iface", 10, 0, 0},
-  {"","/usr/lib/i3blocks/bandwidth", 1, 0, 1},
+  {"","/usr/lib/i3blocks/bandwidth", 5, 0, 1},
   {"ROOT: ","BLOCK_INSTANCE=/ /usr/lib/i3blocks/disk", 10, 0, 0},
   {"HDD: ","BLOCK_INSTANCE=/mnt/hdd /usr/lib/i3blocks/disk", 5, 0, 0},
   {"HOME: ","BLOCK_INSTANCE=/home /usr/lib/i3blocks/disk", 10, 0, 1},
